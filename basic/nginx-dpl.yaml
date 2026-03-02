@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-dpl
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+      - name: nginx-app
+        #image: nginx:alpine
+        image: 69966/earthdx:78 
+        # HPA -> you will need to define the resources
+        ports:
+        - containerPort: 80
