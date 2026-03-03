@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-dpl
+  name: reactjs-dpl
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: nginx-app
+      app: reactjs-app
   template:
     metadata:
       labels:
-        app: nginx-app
+        app: reactjs-app
     spec:
       containers:
-      - name: nginx-app
-        #image: nginx:alpine
+      - name: reactjs-app
+        #image: reactjs:alpine
         image: 69966/earthdx:78 
         # HPA -> you will need to define the resources
         ports:

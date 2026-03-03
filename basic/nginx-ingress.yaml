@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-ingress
+  name: reactjs-ingress
   annotations: 
     #cert-manager.io/cluster-issuer: "letsencrypt-stag"
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
@@ -10,17 +10,16 @@ spec:
   ingressClassName: "nginx"
   tls: 
     - hosts: 
-      - nginx-demo-k8s.anajak-khmer.site
-     # - reactjs-k8s.anajak-khmer.site
-      secretName: nginx-k8s-tls 
+       - reactjs-demo-k8s.vuthytourn.shop
+      secretName: reactjs-k8s-tls 
   rules:
-  - host: nginx-demo-k8s.anajak-khmer.site
+  - host: reactjs-demo-k8s.vuthytourn.shop
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: nginx-svc 
+            name: reactjs-svc 
             port: 
               number: 80
