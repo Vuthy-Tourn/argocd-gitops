@@ -65,14 +65,14 @@ ingress:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
     kubernetes.io/ingressClassName: "nginx"
   hosts:
-    - host: sample-helm.anajak-khmer.site
+    - host: sample-helm.vuthytourn.shop
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
    - secretName: sample-app-tls
      hosts:
-       - sample-helm.anajak-khmer.site
+       - sample-helm.vuthytourn.shop
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
